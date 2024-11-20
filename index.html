@@ -7,22 +7,10 @@
     <title>Portfolio</title>
 </head>
 <body>
-    <!DOCTYPE html>
-<html lang="en" data-theme="dark">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    
-    <!-- Rest of your existing styles remain the same -->
-</head>
-<body>
     <button class="theme-toggle" aria-label="Toggle theme">
         ☀️
     </button>
-
     <!-- Rest of your existing HTML content remains the same -->
-
     <script>
         // Set initial theme
         const themeToggle = document.querySelector('.theme-toggle');
@@ -54,83 +42,81 @@
             setTheme(newTheme);
         });
     </script>
-</body>
-</html>    
         <div class="cursor-glow"></div>
         
         <script>
-        const cursorGlow = document.querySelector('.cursor-glow');
-        
-        document.addEventListener('mousemove', (e) => {
-            cursorGlow.style.left = e.clientX + 'px';
-            cursorGlow.style.top = e.clientY + 'px';
-        });
-        
-        // Optional: make glow bigger on interactive elements
-        document.querySelectorAll('a, button, .project-card').forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursorGlow.style.width = '600px';   /* Increased from 400px */
-                cursorGlow.style.height = '600px';  /* Increased from 400px */
-            });
-            
-            el.addEventListener('mouseleave', () => {
-                cursorGlow.style.width = '500px';   /* Increased from 300px */
-                cursorGlow.style.height = '500px';  /* Increased from 300px */
-            });
-        });
+                const cursorGlow = document.querySelector('.cursor-glow');
+                
+                document.addEventListener('mousemove', (e) => {
+                    cursorGlow.style.left = e.clientX + 'px';
+                    cursorGlow.style.top = e.clientY + 'px';
+                });
+                
+                // Optional: make glow bigger on interactive elements
+                document.querySelectorAll('a, button, .project-card').forEach(el => {
+                    el.addEventListener('mouseenter', () => {
+                        cursorGlow.style.width = '600px';   /* Increased from 400px */
+                        cursorGlow.style.height = '600px';  /* Increased from 400px */
+                    });
+                    
+                    el.addEventListener('mouseleave', () => {
+                        cursorGlow.style.width = '500px';   /* Increased from 300px */
+                        cursorGlow.style.height = '500px';  /* Increased from 300px */
+                    });
+                });
         </script>
         
         <div class="cursor"></div>
         
         <script>
-        const cursor = document.querySelector('.cursor');
-        let mouseX = 0;
-        let mouseY = 0;
-        let cursorX = 0;
-        let cursorY = 0;
-        let speed = 0.2; // Adjust this for faster/slower follow speed
-        
-        // Update mouse position
-        document.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX;
-            mouseY = e.clientY;
-        });
-        
-        // Smooth cursor follow animation
-        function animate() {
-            let distX = mouseX - cursorX;
-            let distY = mouseY - cursorY;
-            
-            cursorX += distX * speed;
-            cursorY += distY * speed;
-            
-            cursor.style.left = cursorX + 'px';
-            cursor.style.top = cursorY + 'px';
-            
-            requestAnimationFrame(animate);
-        }
-        animate();
-        
-        // Expand cursor on clickable elements
-        document.querySelectorAll('a, button, .project-card').forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor.classList.add('expand');
-            });
-            
-            el.addEventListener('mouseleave', () => {
-                cursor.classList.remove('expand');
-            });
-        });
-        
-        // Hide cursor when leaving window
-        document.addEventListener('mouseleave', () => {
-            cursor.style.opacity = '0';
-        });
-        
-        document.addEventListener('mouseenter', () => {
-            cursor.style.opacity = '1';
-        });
-        
+                    const cursor = document.querySelector('.cursor');
+                    let mouseX = 0;
+                    let mouseY = 0;
+                    let cursorX = 0;
+                    let cursorY = 0;
+                    let speed = 0.2; // Adjust this for faster/slower follow speed
+                    
+                    // Update mouse position
+                    document.addEventListener('mousemove', (e) => {
+                        mouseX = e.clientX;
+                        mouseY = e.clientY;
+                    });
+                    
+                    // Smooth cursor follow animation
+                    function animate() {
+                        let distX = mouseX - cursorX;
+                        let distY = mouseY - cursorY;
+                        
+                        cursorX += distX * speed;
+                        cursorY += distY * speed;
+                        
+                        cursor.style.left = cursorX + 'px';
+                        cursor.style.top = cursorY + 'px';
+                        
+                        requestAnimationFrame(animate);
+                    }
+                    animate();
+                    
+                    // Expand cursor on clickable elements
+                    document.querySelectorAll('a, button, .project-card').forEach(el => {
+                        el.addEventListener('mouseenter', () => {
+                            cursor.classList.add('expand');
+                        });
+                        
+                        el.addEventListener('mouseleave', () => {
+                            cursor.classList.remove('expand');
+                        });
+                    });
+                    
+                    // Hide cursor when leaving window
+                    document.addEventListener('mouseleave', () => {
+                        cursor.style.opacity = '0';
+                    });
+                    
+                    document.addEventListener('mouseenter', () => {
+                        cursor.style.opacity = '1';
+                    });
+                    
         </script>
     <nav>
         <a href="#">Home</a>
@@ -141,23 +127,23 @@
     </nav>
 
     <div class="hero">
-    <div class="hero-text">
-        <h1>
-            Hi. I'm <span>CHAGOURI HOUSSAM</span>.<br>
-            A full stack web developer.
-        </h1>
-        <p>
-            As a beginner web developer, I'm passionate about building experiences that are engaging, easy to use, and accessible to everyone.
-        </p>
-        <a href="/CHAGOURI HOUSSAM.pdf" class="cv-button" download="Houssam_Chagouri_CV.pdf">DOWNLOAD CV</a>
-    </div>
-    <div class="hero-image">
-        <div class="image-placeholder">
-            <img src="/ProfilPic/cropped-DSC_7217.JPG" alt="Profile Image" style="width: 100%; height: auto; border-radius: 1rem;">
+        <div class="hero-text">
+            <h1>
+                Hi. I'm <span>CHAGOURI HOUSSAM</span>.<br>
+                A full stack web developer.
+            </h1>
+            <p>
+                As a beginner web developer, I'm passionate about building experiences that are engaging, easy to use, and accessible to everyone.
+            </p>
+            <a href="/CHAGOURI HOUSSAM.pdf" class="cv-button" download="Houssam_Chagouri_CV.pdf">DOWNLOAD CV</a>
         </div>
-    </div>    
+        <div class="hero-image">
+            <div class="image-placeholder">
+                <img src="/ProfilPic/cropped-DSC_7217.JPG" alt="Profile Image" style="width: 100%; height: auto; border-radius: 1rem;">
+            </div>
+        </div>    
     
-</div>
+    </div>
 
    <div class="skills-grid">
     <!-- GitHub Button -->
@@ -192,8 +178,6 @@
     </div>
 
 </head>
-<body>
-
     <section class="timeline-section" id="resume">
         <div class="timeline-container">
             <div class="headers" id="Parcours">
@@ -304,7 +288,6 @@
         </div>
     </div>
 
-    
 
     <footer>
         <div class="copyright">
