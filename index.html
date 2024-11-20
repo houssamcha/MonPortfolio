@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Portfolio</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    
+    <!-- Rest of your existing styles remain the same -->
+</head>
+<body>
+    <button class="theme-toggle" aria-label="Toggle theme">
+        ☀️
+    </button>
+
+    <!-- Rest of your existing HTML content remains the same -->
+
+    <script>
+        // Set initial theme
+        const themeToggle = document.querySelector('.theme-toggle');
+        const html = document.documentElement;
+        
+        // Function to set theme
+        function setTheme(theme) {
+            html.setAttribute('data-theme', theme);
+            themeToggle.innerHTML = theme === 'dark' ? '☀️' : '🌙';
+            
+            // Update cursor glow color based on theme
+            const cursorGlow = document.querySelector('.cursor-glow');
+            if (cursorGlow) {
+                if (theme === 'dark') {
+                    cursorGlow.style.background = 'radial-gradient(circle, rgba(173, 232, 244, 0.15) 0%, rgba(173, 232, 244, 0.05) 40%, rgba(173, 232, 244, 0) 70%)';
+                } else {
+                    cursorGlow.style.background = 'radial-gradient(circle, rgba(3, 4, 94, 0.15) 0%, rgba(3, 4, 94, 0.05) 40%, rgba(3, 4, 94, 0) 70%)';
+                }
+            }
+        }
+
+        // Set initial theme
+        setTheme('dark');
+
+        // Theme toggle click handler
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = html.getAttribute('data-theme');
+            const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+            setTheme(newTheme);
+        });
+    </script>
+</body>
+</html>    
+        <div class="cursor-glow"></div>
+        
+        <script>
+        const cursorGlow = document.querySelector('.cursor-glow');
+        
+        document.addEventListener('mousemove', (e) => {
+            cursorGlow.style.left = e.clientX + 'px';
+            cursorGlow.style.top = e.clientY + 'px';
+        });
+        
+        // Optional: make glow bigger on interactive elements
+        document.querySelectorAll('a, button, .project-card').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursorGlow.style.width = '600px';   /* Increased from 400px */
+                cursorGlow.style.height = '600px';  /* Increased from 400px */
+            });
+            
+            el.addEventListener('mouseleave', () => {
+                cursorGlow.style.width = '500px';   /* Increased from 300px */
+                cursorGlow.style.height = '500px';  /* Increased from 300px */
+            });
+        });
+        </script>
+        
+        <div class="cursor"></div>
+        
+        <script>
+        const cursor = document.querySelector('.cursor');
+        let mouseX = 0;
+        let mouseY = 0;
+        let cursorX = 0;
+        let cursorY = 0;
+        let speed = 0.2; // Adjust this for faster/slower follow speed
+        
+        // Update mouse position
+        document.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+        
+        // Smooth cursor follow animation
+        function animate() {
+            let distX = mouseX - cursorX;
+            let distY = mouseY - cursorY;
+            
+            cursorX += distX * speed;
+            cursorY += distY * speed;
+            
+            cursor.style.left = cursorX + 'px';
+            cursor.style.top = cursorY + 'px';
+            
+            requestAnimationFrame(animate);
+        }
+        animate();
+        
+        // Expand cursor on clickable elements
+        document.querySelectorAll('a, button, .project-card').forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.classList.add('expand');
+            });
+            
+            el.addEventListener('mouseleave', () => {
+                cursor.classList.remove('expand');
+            });
+        });
+        
+        // Hide cursor when leaving window
+        document.addEventListener('mouseleave', () => {
+            cursor.style.opacity = '0';
+        });
+        
+        document.addEventListener('mouseenter', () => {
+            cursor.style.opacity = '1';
+        });
+        
+        </script>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#about">About</a>
+        <a href="#Parcours">Parcours</a>
+        <a href="#Skills">Skills</a>
+        <a href="mailto:chagourihoussam@gmail.com">Contact</a>
+    </nav>
+
+    <div class="hero">
+    <div class="hero-text">
+        <h1>
+            Hi. I'm <span>CHAGOURI HOUSSAM</span>.<br>
+            A full stack web developer.
+        </h1>
+        <p>
+            As a beginner web developer, I'm passionate about building experiences that are engaging, easy to use, and accessible to everyone.
+        </p>
+        <a href="/CHAGOURI HOUSSAM.pdf" class="cv-button" download="Houssam_Chagouri_CV.pdf">DOWNLOAD CV</a>
+    </div>
+    <div class="hero-image">
+        <div class="image-placeholder">
+            <img src="/ProfilPic/cropped-DSC_7217.JPG" alt="Profile Image" style="width: 100%; height: auto; border-radius: 1rem;">
+        </div>
+    </div>    
+    
+</div>
+
+   <div class="skills-grid">
+    <!-- GitHub Button -->
+    <a href="https://github.com/houssamcha" target="_blank">
+        <button class="skill-button">
+            <img src="/assets/logos/3f0dd5b7ff57762e5333e1d3c3ed6b0a.png" alt="Github" class="skill-icon">
+        </button>
+    </a>
+    
+    <!-- LinkedIn Button -->
+    <a href="https://ma.linkedin.com/in/houssam-chagouri-8024bb224?original_referer=https%3A%2F%2Fwww.google.com%2F" target="_blank">
+        <button class="skill-button">
+            <img src="/assets/logos/9e6c3ce5fcb9214b163d1cb2d1c9bf8f.png" alt="LinkedIn" class="skill-icon">
+        </button>
+    </a>
+</div>
+
+
+
+    <div id="about" class="about-section">
+        <h2>About Me</h2>
+        <p>
+            I am a beginner full-stack web developer with skills in both front-end and back-end development. 
+            I work with HTML, CSS, TypeScript, and Angular to build responsive user interfaces, and I use Java with Spring Boot for back-end development. 
+            I am also learning how to manage databases using PostgreSQL.
+        </p>
+        <p>
+            I am focused on creating user-friendly solutions and learning best practices to improve my skills. 
+            I aim to build projects that are both functional and visually appealing, 
+            and I stay updated on industry trends to provide effective solutions for different needs.
+        </p>
+    </div>
+
+</head>
+<body>
+
+    <section class="timeline-section" id="resume">
+        <div class="timeline-container">
+            <div class="headers" id="Parcours">
+                <h2>
+                    <i class="fas fa-briefcase"></i> Parcours Professional
+                </h2>
+            </div>
+            <div class="timeline-wrapper">
+                <!-- Education Timeline -->
+                <div class="timeline-block">
+                    <h2 class="section-title">Education</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <span class="timeline-year">2024 - 2025</span>
+                                <h3 class="timeline-title">Certification Full-Stack Java Angular</h3>
+                                <h4 class="timeline-subtitle">École Numérique Ahmed AL HANSALI (Simplon)</h4>
+                                <p class="timeline-desc">Spécialisé dans le développement web , réalisé plusieurs projets pratiques.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <span class="timeline-year">Sep 2019 - Aug 2020</span>
+                                <h3 class="timeline-title">Technicien spécialisé de la maintenance en industrie agroalimentaire</h3>
+                                <h4 class="timeline-subtitle">ISIAO BENI MELLAL - Béni Mellal</h4>
+                                <p class="timeline-desc">Spécialisé dans le développement web , réalisé plusieurs projets pratiques</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <span class="timeline-year">Sep 2019</span>
+                                <h3 class="timeline-title">Bacalaureat Science Physique</h3>
+                                <h4 class="timeline-subtitle">LYCEE EL KHAWARIZMI - SOUK SEBT</h4>
+                                <p class="timeline-desc">Focused on fundamental programming concepts and web
+                                    technologies. Completed internship at local tech company.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Experience Timeline -->
+                <div class="timeline-block">
+                    <h2 class="section-title">Experience</h2>
+                    <div class="timeline">
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <span class="timeline-year">Jan 2023 - Avr 2023</span>
+                                <h3 class="timeline-title">Employé chez COSUMAR</h3>
+                                <h4 class="timeline-subtitle">Maintenance des machines industrielles</h4>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <span class="timeline-year">May 2021 - Dec 2022</span>
+                                <h3 class="timeline-title">Employé chez ChaabiCash</h3>
+                                <h4 class="timeline-subtitle">PRÉSIDENCE DE L'UNIVERSITÉ SULTAN MOULAY SLIMANE</h4>
+                                <p class="timeline-desc">Developed responsive websites and implemented modern UI/UX
+                                    designs. Collaborated with design team on multiple projects.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <div class="timeline-content">
+                                    <span class="timeline-year">Dec 2020 - Mar 2021</span>
+                                    <h3 class="timeline-title"> Employé chez Cashplus</h3>
+                                    <p class="timeline-desc">Spécialisé dans le développement web , réalisé plusieurs projets pratiques.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="containers">
+        <div class="headers" id="Skills">
+            <h1>My Skills</h1>
+        </div>
+        
+        <div class="skills-grid">
+            <div class="skill-card">
+                <img src="/assets/logos/figma.png" alt="Figma" class="skill-icon">
+                <span class="skill-name">Figma</span>
+            </div>
+            
+            <div class="skill-card">
+                <img src="/assets/logos/programing.png" alt="Angular" class="skill-icon">
+                <span class="skill-name">Angular</span>
+            </div>
+            
+            <div class="skill-card">
+                <img src="/assets/logos/springboot.png.png" alt="springboot" class="skill-icon">
+                <span class="skill-name">Spring Boot</span>
+            </div>
+            
+            <div class="skill-card">
+                <img src="/assets/logos/pngwing.com.png" alt="PostgreSQL" class="skill-icon">
+                <span class="skill-name">PostgreSQL</span>
+            </div>
+            
+            <div class="skill-card">
+                <img src="/assets/logos/java.png" alt="java" class="skill-icon">
+                <span class="skill-name">Java</span>
+            </div>
+            
+            <div class="skill-card">
+                <img src="/assets/logos/typescript.png" alt="JavaScript" class="skill-icon">
+                <span class="skill-name">TypeScript</span>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <footer>
+        <div class="copyright">
+            © 2024 Chagouri Houssam - Portfolio
+        </div>
+        <div class="footer-links">
+            <a href="https://github.com/houssamcha">Github</a>
+            <a href="https://ma.linkedin.com/in/houssam-chagouri-8024bb224?original_referer=https%3A%2F%2Fwww.google.com%2F">LinkedIn</a>
+            <a href="/CHAGOURI HOUSSAM.pdf">CV</a>
+            <a href="mailto:chagourihoussam@gmail.com">Contact</a>
+        </div>
+    </footer>
+</body>
+</html>
